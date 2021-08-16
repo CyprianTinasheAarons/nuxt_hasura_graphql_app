@@ -1,0 +1,13 @@
+const ADD_BOOKS = gql `
+mutation($book_sting: String!) {
+    insert_books(object: {title: $book_string}){
+        affected_rows
+        returing{
+            id
+            title
+            description
+            created_at
+        }
+    }
+}   
+`

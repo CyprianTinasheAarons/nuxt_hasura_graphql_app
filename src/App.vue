@@ -1,28 +1,46 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div class="bg-dark app">
+    <section class="row overlay">
+      <div class="container-fluid">
+        <div class="header text-center mb-3">
+          <h2 class="text-uppercase">My Books Store</h2>
+          <h4>Record of all the books i've read</h4>
+        </div>
+
+        <transition name="movieUp">
+          <router-view />
+        </transition>
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-
 export default {
   name: "App",
-  components: {
-    HelloWorld,
-  },
+  components: {},
 };
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;1,400&amp;display=swap");
+
+.app {
+  font-family: "Nunito Sans", sans-serif;
+
+  background: #121212;
+  min-height: 100vh;
+  overflow-x: hidden;
+  margin: 0 auto;
+  padding: 0 auto;
+}
+.overlay {
+  margin: 30px;
+  background: rgb(20, 20, 20);
+  /* width: 100%; */
+  padding: 1em;
+  border-radius: 10px;
+  color: rgba(248, 248, 248, 0.8);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 </style>
